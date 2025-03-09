@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo " Running uicache..."
+su mobile -c "uicache -v -p /Applications/MobileMiniBrowser.app"
+echo " Running uicache... Done."
+
+exit 0;
+

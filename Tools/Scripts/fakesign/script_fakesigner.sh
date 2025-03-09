@@ -69,29 +69,37 @@ if [ ! -d $DEBIAN_FILES ]; then
 fi
 
 # Initialization
-rm -rf $(dirname $safe_app)/Payload
+PAYLOAD_DIR_NAME=build_$DIR_NAME
+rm -rf $(dirname $safe_app)/$PAYLOAD_DIR_NAME/Payload
 cd $(dirname $safe_app) || exit 1
 if [[ $safe_app == *.app ]]; then
     if [ ! -d $safe_app ]; then
         echo "[!] Expected WebKit build directory to be a .app bundle, but couldn't find it"
         exit 1
     fi
-    mkdir Payload
-    cp -R $safe_app $(dirname $safe_app)/Payload
+    mkdir $PAYLOAD_DIR_NAME
+    mkdir $PAYLOAD_DIR_NAME/Payload
+    cp -R $safe_app $(dirname $safe_app)/$PAYLOAD_DIR_NAME/Payload
 elif [[ $safe_app == *.ipa ]]; then
     if [ ! -f $safe_app ]; then
         echo "[!] Expected WebKit build directory to be a .ipa file, but couldn't find it"
         exit 1
     fi
     unzip $safe_app
+    mkdir $PAYLOAD_DIR_NAME
+    mv Payload $PAYLOAD_DIR_NAME
 else
     echo "[!] No .ipa file supplied!"
     exit 1
 fi
 
-cd Payload
+cd $PAYLOAD_DIR_NAME/Payload
 app=$(ls -1 -d *.app)
-rpath=$(dirname $safe_app)/Payload/$app/Frameworks
+rpath=$(dirname $safe_app)/$PAYLOAD_DIR_NAME/Payload/$app/Frameworks
+
+if [ ! -d $rpath ]; then
+    mkdir $rpath
+fi
 
 if [[ $webkit_build == *.deb ]]; then
     if [ ! -f $webkit_build ]; then
@@ -111,11 +119,16 @@ else
         echo "[!] Expected WebKit build directory to be a generated directory, but couldn't find it"
         exit 1
     fi
+    
+    # Copy test support if necessary
+    if [[ ! -z "$TEST_SUPPORT" ]]; then
+        cp $webkit_build/libWebCoreTestSupport.dylib $rpath
+    fi
+    
     # Copy ICU data and frameworks
     cp -R $webkit_build/JavaScriptCore.framework $webkit_build/Web*.framework $rpath
     
     icu_source=$webkit_build/../../Source/WTF/icu
-    #cp $icu_source/build.noindex/ios_arm64/data/out/tmp/*.dat $rpath
     cp $icu_source/libunicode.dylib $rpath
     
     mkdir $rpath/WebCore.framework/Frameworks
@@ -201,7 +214,7 @@ for (( i = 0; i < $binaries_len; i++ )); do
     # Confirm there is really a file there, it might happen that we have an empty wildcard
     user_bin=$(echo $bin | sed "s|"$rpath"|@rpath|")
     if [ -f $bin ]; then
-        echo "["$(($i + 1))"/"$binaries_len"] Fakesigning" $user_bin
+        echo "["$(($i + 1))"/"$binaries_len"] Processing" $user_bin
         
         # Get entitlements
         static_ents=$(<./script_fakesigner.entitlements)
@@ -221,7 +234,9 @@ for (( i = 0; i < $binaries_len; i++ )); do
         done
     
         # Fakesign
+        echo "[§] Fakesigning" $user_bin
         ldid -S$new_ents $bin
+        echo "[§] Fakesigning" $user_bin "completed with code" $?
     else
         echo "["$(($i + 1))"/"$binaries_len"] Warning: A path was specified but there is no file at" $user_bin
     fi
@@ -231,7 +246,7 @@ rm *.entitlements
 
 # Setup for DEB packaging
 cd ..
-rm -f *.deb || true
+rm -f *$DIR_NAME*.deb || true
 if [[ $DIR_NAME == *"+"* ]]; then
     if [[ ${DIR_NAME#*+} -le 10 ]]; then
         # We manually stash WebKit on legacy iOS because it doesn't fit in the root partition
@@ -283,6 +298,6 @@ rm -rf $DIR_NAME
 # Package into IPA
 TIPA_NAME=$(echo *.deb | sed 's/_[a-z].*//' | sed 's/\+\([0-9]\)/\1/' | sed 's/-\([0-9]\)/\1/')
 echo "[*] Creating IPA..."
-rm -f *.tipa || true
+rm -f $TIPA_NAME.tipa || true
 zip -r -y "$TIPA_NAME.tipa" Payload
 echo "[*] Created $TIPA_NAME.tipa"

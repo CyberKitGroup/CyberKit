@@ -1,0 +1,14 @@
+Package: com.matthewbenedict.testrunner+14
+Name: CyberKit TestRunner (iOS 14)
+Maintainer: UInt2048
+Version: 0.0.9-nightly.01
+Section: Tweaks
+Provides: com.matthewbenedict.testrunner (= 0.0.9-nightly.01)
+Conflicts: com.matthewbenedict.testrunner
+Replaces: com.matthewbenedict.testrunner
+Depends: firmware (>=14.0), firmware (<<15.0)
+Architecture: iphoneos-arm
+Description: CyberKit TestRunner allows you to test the CyberKit backport of newer CyberKit in a minimal browser.
+Depiction: https://uint2048.github.io/depictions/testrunner-rootful/?p=14
+Sileodepiction: https://uint2048.github.io/depictions/testrunner-rootful/14/sileo.json
+Icon: https://uint2048.github.io/CydiaIcon.png

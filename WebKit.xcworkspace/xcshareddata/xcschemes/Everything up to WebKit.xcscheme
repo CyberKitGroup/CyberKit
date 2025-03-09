@@ -132,20 +132,6 @@
                ReferencedContainer = "container:Source/WebKit/WebKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D20067422F2652E008DF640"
-               BuildableName = "libswiftWebKit.dylib"
-               BlueprintName = "WebKitSwiftOverlay"
-               ReferencedContainer = "container:Source/WebKit/SwiftOverlay/WebKitSwiftOverlay.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -95,6 +95,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				4889F9E12CD3B939003B754B /* PBXTargetDependency */,
 				CD0C36DB2639D3AF004E35D8 /* PBXTargetDependency */,
 				CD0C36DD2639D3B4004E35D8 /* PBXTargetDependency */,
 			);
@@ -2714,6 +2715,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C0CE72851247E66800BC0EC4;
 			remoteInfo = "Derived Sources";
+		};
+		4889F9E02CD3B939003B754B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C753E2CC7CA7A0036EF32 /* WebKitSwiftOverlay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D20067422F2652E008DF640;
+			remoteInfo = WebKitSwiftOverlay;
 		};
 		488C75452CC7CA7A0036EF32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -20053,6 +20061,11 @@
 			isa = PBXTargetDependency;
 			target = C0CE72851247E66800BC0EC4 /* Derived Sources */;
 			targetProxy = 37F7407812721F740093869B /* PBXContainerItemProxy */;
+		};
+		4889F9E12CD3B939003B754B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WebKitSwiftOverlay;
+			targetProxy = 4889F9E02CD3B939003B754B /* PBXContainerItemProxy */;
 		};
 		517B5F6D275B07C3002DC22D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
