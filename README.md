@@ -47,7 +47,7 @@ If building yourself, you may wish to use the version of Xcode used at the time 
 
 On branches diverging before 1 May 2024 (that is, before `safari-7619.1.12-branch`, see WebKit#27941), you must run `Tools/Scripts/configure-xcode-for-embedded-development` before 1st build or any time you reinstall/update Xcode or its SDKs.
 
-If a branch needs a newer configure script, you can grab one like this from the ref607 branch: `OUT_FILE=./configure-xcode-for-embedded-development; git show 62f80e2:Tools/Scripts/configure-xcode-for-ios-development > $OUT_FILE; chmod 755 $OUT_FILE; $OUT_FILE`
+If a branch needs a newer configure script, you can grab one like this from the ref607 branch: `OUT_FILE=~/Desktop/conf; git show 62f80e2:Tools/Scripts/configure-xcode-for-ios-development > $OUT_FILE; chmod 755 $OUT_FILE; $OUT_FILE`
 
 Beginning 2 January 2024, you can just [ad hoc sign](https://akemi.ai/?page/how2asu) with no changes to CyberKit itself which is especially convenient if you want to build in a macOS VM on Apple Silicon [where you can't sign in to your Apple ID](https://developer.apple.com/forums/thread/707682).
 
