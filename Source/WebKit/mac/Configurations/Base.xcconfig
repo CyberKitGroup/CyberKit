@@ -23,6 +23,7 @@
 
 #include "iOS.xcconfig"
 #include "../../../../../Internal/Configurations/UseInternalSDK.xcconfig"
+#include "../../../../Configurations/CommonBase.xcconfig"
 
 CLANG_CXX_LANGUAGE_STANDARD = gnu++0x;
 CLANG_CXX_LIBRARY = libc++;

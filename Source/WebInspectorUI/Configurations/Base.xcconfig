@@ -1,3 +1,5 @@
+#include "../../../Configurations/CommonBase.xcconfig"
+
 COPY_PHASE_STRIP = NO;
 DEAD_CODE_STRIPPING = YES;
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;

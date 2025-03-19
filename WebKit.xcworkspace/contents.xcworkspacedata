@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Configurations"
+      name = "Configurations">
+      <FileRef
+         location = "group:CommonBase.xcconfig">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Source/bmalloc/bmalloc.xcodeproj">
    </FileRef>

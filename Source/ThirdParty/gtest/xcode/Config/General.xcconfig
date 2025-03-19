@@ -8,6 +8,7 @@
 //
 
 #include "iOS.xcconfig"
+#include "../../../../../Configurations/CommonBase.xcconfig"
 
 GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 
