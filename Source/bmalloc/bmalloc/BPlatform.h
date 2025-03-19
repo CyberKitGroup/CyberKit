@@ -34,4 +34,12 @@
 #define BPLATFORM_IOS 1
 #endif
 
+#define BCOMPILER_SUPPORTS(COMPILER_FEATURE) (defined BCOMPILER_SUPPORTS_##COMPILER_FEATURE && BCOMPILER_SUPPORTS_##COMPILER_FEATURE)
+
+#ifdef __has_feature
+#define BCOMPILER_SUPPORTS_CXX_THREAD_LOCAL __has_feature(cxx_thread_local)
+#else
+#define BCOMPILER_SUPPORTS_CXX_THREAD_LOCAL 0
+#endif
+
 #endif // BPlatform_h
