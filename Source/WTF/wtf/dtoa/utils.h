@@ -294,7 +294,11 @@ namespace double_conversion {
     inline Dest BitCast(const Source& source) {
         // Compile time assertion: sizeof(Dest) == sizeof(Source)
         // A compile error here means your Dest and Source have different sizes.
+#if __cplusplus >= 201103L
+        static_assert(sizeof(Dest) == sizeof(Source), "source and destination size mismatch");
+#else
         typedef char VerifySizesAreEqual[sizeof(Dest) == sizeof(Source) ? 1 : -1];
+#endif
         
         Dest dest;
         memcpy(&dest, &source, sizeof(dest));

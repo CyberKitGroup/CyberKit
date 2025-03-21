@@ -81,11 +81,20 @@ extern "C" JSC::LLVMAPI* initializeAndGetJSCLLVMAPI(void (*callback)(const char*
     LLVMInitializeX86AsmPrinter();
     LLVMInitializeX86Disassembler();
 #elif CPU(ARM64)
+#define USE_OLD_TARGET_82 0
+#if USE_OLD_TARGET_82
     LLVMInitializeARM64TargetInfo();
     LLVMInitializeARM64Target();
     LLVMInitializeARM64TargetMC();
     LLVMInitializeARM64AsmPrinter();
     LLVMInitializeARM64Disassembler();
+#else
+    LLVMInitializeAArch64TargetInfo();
+    LLVMInitializeAArch64Target();
+    LLVMInitializeAArch64TargetMC();
+    LLVMInitializeAArch64AsmPrinter();
+    LLVMInitializeAArch64Disassembler();
+#endif
 #else
     UNREACHABLE_FOR_PLATFORM();
 #endif

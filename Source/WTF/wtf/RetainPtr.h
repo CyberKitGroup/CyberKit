@@ -128,7 +128,10 @@ namespace WTF {
         StorageType toStorageType(id ptr) const { return (__bridge StorageType)ptr; }
         StorageType toStorageType(CFTypeRef ptr) const { return (StorageType)ptr; }
 #else
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-qual"
         PtrType fromStorageType(StorageType ptr) const { return (PtrType)ptr; }
+#pragma clang diagnostic pop
         StorageType toStorageType(PtrType ptr) const { return (StorageType)ptr; }
 #endif
 
