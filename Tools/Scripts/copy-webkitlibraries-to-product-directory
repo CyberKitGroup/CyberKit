@@ -53,7 +53,7 @@ Usage: $programName [options]
   --[no-]llvm                   Toggle copying LLVM drops (default: $llvm)
   --[no-]wksi                   Toggle copying WebKitSystemInterface drops (default: $wksi)
   --clean                       Clean the libraries (default: $clean)
-  --use-llvm-includes=<path>    Get the LLVM inludes package from <path>
+  --use-llvm-includes=<path>    Get the LLVM includes package from <path>
   --use-llvm-libraries=<path>   Get the LLVM libraries package from <path>
   --[no-]use-full-lib-paths     Toggle using full library paths
   --[no-]prefer-system-llvm     Toggle preferring the system LLVM over the binary drops (default: $preferSystemLLVMOverDrops)
@@ -228,7 +228,7 @@ if ($llvm) {
         exit 1;
     }
 
-    $llvmIncludePackage = $ENV{LLVM_LIBRARY_PACKAGE} unless $llvmIncludePackage;
+    $llvmLibraryPackage = $ENV{LLVM_LIBRARY_PACKAGE} unless $llvmLibraryPackage;
     $llvmIncludePackage = $ENV{LLVM_INCLUDE_PACKAGE} unless $llvmIncludePackage;
     if (!$llvmLibraryPackage || !$llvmIncludePackage) {
         if (isIOSWebKit()) {
