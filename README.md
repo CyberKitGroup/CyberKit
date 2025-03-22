@@ -33,6 +33,9 @@ You can clone just the current development branch with `git clone -b safari-7619
     * _Diverged 11 December 2022; built in Xcode 14.2_
 
 ## Reference Implementations
+
+You may find https://en.wikipedia.org/w/index.php?title=Safari_version_history&oldid=1186257925 beneficial to view correspondence between Safari version and iOS version.
+
 * [safari-607-branch](https://github.com/UInt2048/CyberKit/tree/safari-607-branch): 19 May 2023 - 21 July 2023 (used in v0.0.8 ref607)
     * _Diverged 7 January 2019; built in Xcode 11.7_
 * [safari-608-branch](https://github.com/UInt2048/CyberKit/tree/safari-608-branch): 21 July 2023 - 22 July 2023 (used in v0.0.8 ref608)
@@ -45,17 +48,38 @@ You can clone just the current development branch with `git clone -b safari-7619
 ## Building from Source
 If building yourself, you may wish to use the version of Xcode used at the time to build the commit you are building.
 
-On branches diverging before 1 May 2024 (that is, before `safari-7619.1.12-branch`, see WebKit#27941), you must run `Tools/Scripts/configure-xcode-for-embedded-development` before 1st build or any time you reinstall/update Xcode or its SDKs.
+On branches diverging before 1 May 2024 (before `safari-7619.1.12-branch`, see WebKit#27941), you must run `Tools/Scripts/configure-xcode-for-embedded-development` before 1st build or any time you reinstall/update Xcode or its SDKs.
 
 If a branch needs a newer configure script, you can grab one like this from the ref607 branch: `OUT_FILE=~/Desktop/conf; git show 62f80e2:Tools/Scripts/configure-xcode-for-ios-development > $OUT_FILE; chmod 755 $OUT_FILE; $OUT_FILE`
 
-Beginning 2 January 2024, you can just [ad hoc sign](https://akemi.ai/?page/how2asu) with no changes to CyberKit itself which is especially convenient if you want to build in a macOS VM on Apple Silicon [where you can't sign in to your Apple ID](https://developer.apple.com/forums/thread/707682).
+On branches diverging before 18 February 2016 (before `safari-602.1.32-branch`, see [bbc738d](https://github.com/WebKit/WebKit/commit/bbc738dcb37964a7811bbc57977797e564fb86a8)), you must build LLVM. You can do so as documented in [1f5b857](https://github.com/WebKit/WebKit/commit/1f5b8575a5439c4db6a4ac348a10bade4125ba0a):
+
+If there are already precompiled binaries:
+1. Obtain the precompiled binaries: `git checkout 1f5b857 WebKitLibraries/LLVMIncludesIOS9.tar.bz2 WebKitLibraries/LLVMLibrariesIOS9.tar.bz2`
+2. Run the command `perl Tools/Scripts/copy-webkitlibraries-to-product-directory --llvm --sdk=iphoneos --use-llvm-includes=WebKitLibraries/LLVMIncludesIOS9.tar.bz2 --use-llvm-libraries=WebKitLibraries/LLVMLibrariesIOS9.tar.bz2 WebKitBuild/Debug-iphoneos`
+
+If you wish to create precompiled binaries:
+1. Attain the LLVM source code for an appropriately old release. For instance, from https://releases.llvm.org/download.html#3.6.2, choose http://llvm.org/releases/3.6.2/llvm-3.6.2.src.tar.xz.
+    * You can confirm if the version you selected will work if adding the precompiled OS X headers to `HEADER_SEARCH_PATHS` in `LLVMForJSC.xcconfig` allows you to build the target `llvmForJSC`. Note this will not link on iOS, due to architecture issues.
+2. If your CyberKit git repo is at `~/Documents/git/CyberKit`, expand this archive to `~/Documents/git/CyberKit/llvm`.
+3. If your branch diverged before 8 October 2015, run `git checkout 1f5b857 Tools/Scripts/copy-webkitlibraries-to-product-directory`.
+4. Theoretically, you can run the command `perl Tools/Scripts/copy-webkitlibraries-to-product-directory --llvm --sdk=iphoneos WebKitBuild/Debug-iphoneos`. This step may require changes.
+
+You may be able to [ad hoc sign](https://akemi.ai/?page/how2asu) in some commits beginning 2 January 2024 without changes to CyberKit itself. Support for this is limited, but it may be the only method on some Apple Silicon VMs, as explained below.
 
 You will build the "Everything up to CyberKit" target then the appropriate app.
 
-### Development Environment Notes
+## Development Environment Notes
 
-* Development is performed on macOS using Xcode.
-* The rename script requires `gnu-sed` and `rename`, which can be obtained using Homebrew.
-* Beginning with [fa2170c](https://github.com/UInt2048/CyberKit/commit/fa2170c3604b4ccacbc4f2475f91c0638ac7a2a0) [7 April 2023], Xcode 14.3 is used.
-* Before this, Xcode 14.2 was used.
+Development is performed on macOS using Xcode. However, owing to the number of Xcode versions required, you may need to virtualize or emulate other macOS versions.
+
+Xcode versions are chosen based on the date of commits and the iOS versions supported. The minimum deployment targets can be viewed at https://developer.apple.com/support/xcode/#minimum-requirements. Note that Xcode below 10 did not have a minimum deployment target, so running Xcode 9.4.1 on macOS Mojave should be the earliest Xcode you need to use for any branch.
+
+If you need to emulate an Intel version of macOS on Apple Silicon, you can use UTM:
+1. Obtain the requisite macOS install files via https://github.com/corpnewt/gibMacOS. If you don't get a full installer, you can use BaseSystem.dmg or RestoreImage.dmg instead.
+2. Obtain the UTM configuration file from https://github.com/adespoton/utmconfigs.
+3. Import the macOS install file you obtained in the UTM configuration and install macOS.
+
+For later versions, you can dualboot or use the built-in virtualization framework. Note that Apple Silicon VMs require both the host and guest to be on, and have been created on, [macOS 15 or later](https://developer.apple.com/documentation/virtualization/using-icloud-with-macos-virtual-machines), in order to sign in to your Apple ID in Xcode due to entitlement issues.
+
+If you are running under Intel, I previously had success with virtualizing older macOS versions with https://github.com/myspaghetti/macos-virtualbox but it is no longer maintained. You might consider dualbooting for performance reasons, or check out other methods like https://github.com/kholia/OSX-KVM.
