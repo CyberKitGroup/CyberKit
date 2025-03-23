@@ -30165,6 +30165,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CDD45E50BA9C84600F90147 /* WebCore.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 				EXPORTED_SYMBOLS_FILE = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/bin;
@@ -30180,6 +30181,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CDD45E50BA9C84600F90147 /* WebCore.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 				EXPORTED_SYMBOLS_FILE = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "$(ASAN_OTHER_CFLAGS)";
@@ -30194,6 +30196,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CDD45E50BA9C84600F90147 /* WebCore.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 				EXPORTED_SYMBOLS_FILE = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_LDFLAGS = "";

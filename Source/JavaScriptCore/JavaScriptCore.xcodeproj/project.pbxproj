@@ -7557,6 +7557,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Debug;
 		};
@@ -7564,6 +7565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Release;
 		};
@@ -7571,6 +7573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Profiling;
 		};
@@ -7578,6 +7581,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Production;
 		};
@@ -7585,6 +7589,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Debug;
 		};
@@ -7592,6 +7597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Release;
 		};
@@ -7599,6 +7605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Production;
 		};
@@ -7630,6 +7637,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DAFD6CB146B686300FBEFB4 /* JSC.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Debug;
 		};
@@ -7637,6 +7645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DAFD6CB146B686300FBEFB4 /* JSC.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Release;
 		};
@@ -7644,6 +7653,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DAFD6CB146B686300FBEFB4 /* JSC.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Production;
 		};
@@ -7698,6 +7708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Debug;
 		};
@@ -7705,6 +7716,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Release;
 		};
@@ -7712,6 +7724,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Production;
 		};
@@ -7775,6 +7788,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Debug;
 		};
@@ -7782,6 +7796,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Release;
 		};
@@ -7789,6 +7804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Profiling;
 		};
@@ -7796,6 +7812,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Production;
 		};
@@ -7894,6 +7911,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Profiling;
 		};
@@ -7901,6 +7919,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC021BF2136900C300FC5467 /* ToolExecutable.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Profiling;
 		};
@@ -7908,6 +7927,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DAFD6CB146B686300FBEFB4 /* JSC.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: uint2048@icloud.com (9ACBG9YARX)";
 			};
 			name = Profiling;
 		};
