@@ -48,7 +48,12 @@ You may find https://en.wikipedia.org/w/index.php?title=Safari_version_history&o
 ## Building from Source
 If building yourself, you may wish to use the version of Xcode used at the time to build the commit you are building.
 
-On branches diverging before 1 May 2024 (before `safari-7619.1.12-branch`, see WebKit#27941), you must run `Tools/Scripts/configure-xcode-for-embedded-development` before 1st build or any time you reinstall/update Xcode or its SDKs.
+On branches diverging before 1 May 2024 (before `safari-7619.1.12-branch`, see WebKit#27941), you must run `Tools/Scripts/configure-xcode-for-embedded-development` before 1st build or any time you reinstall/update Xcode or its SDKs. If you need the xpc.h header, you can get it from https://github.com/theos/templates/tree/f0fb942c4bb90ef331126e2b38257974b18bc895/ios/xpc_service/headers.
+
+Even now, it still may be useful to replace or supplement Xcode's SDK with one with private headers from https://github.com/theos/sdks. Officially, support for building on the public SDK was introduced in late 2014:
+
+* JavaScript and bmalloc first built on the public SDK on 13 August 2014 (see [8af367f](https://github.com/WebKit/WebKit/commit/8af367f75c293a992e8fe1f0cadb469f5dd5db68#diff-bddc5f89deea040f3ce0332f74fa684296ce2d959ca459a541677e0699081aa9)).
+* WebCore first built on the public SDK on 17 September 2014 (see [226279b](https://github.com/WebKit/WebKit/commit/226279b118c82d9a6e389fa004f00c0c6a1e4fa4#diff-c38736d473f4d11bace7995198de5ceb035d65489d9a747abdb1587143927152)).
 
 If a branch needs a newer configure script, you can grab one like this from the ref607 branch: `OUT_FILE=~/Desktop/conf; git show 62f80e2:Tools/Scripts/configure-xcode-for-ios-development > $OUT_FILE; chmod 755 $OUT_FILE; $OUT_FILE`
 
