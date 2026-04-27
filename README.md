@@ -2,6 +2,18 @@
 
 CyberKit is a backport of WebKit to older iOS.
 
+This browser's first release in April 2023 was contemporaneous to Google's [Blink browser prototype](https://9to5google.com/2023/03/03/first-look-google-chrome-blink-engine-iphone-ios/). Although 9to5Google was able to run their browser in the iOS Simulator, upstream WebKit has allowed internal builds on the simulator have existed [since 2009](https://github.com/WebKit/WebKit/commit/8db218434d82310a70e950d3d8e843239603cd9a), and public support for builds on the simulator has existed [since 2014](https://github.com/WebKit/WebKit/commit/a51f89b11e3114cee49938fa15fdce22ecf43a8f). This project extended this work by being the first open source public project to provide an alternative browser engine for iOS on real hardware, successfully providing more usability under some conditions than the available stock iOS browsers, and provided a [technical overview](https://www.reddit.com/r/jailbreak/comments/1gdro8i/discussion_cyberkit_explained_a_technical_overview/) in 2024 to encourage more developers to work on developing browsers for iOS.
+
+## Recent External Developments
+
+Following in the footsteps of the 2012 tweak [Nitrous](https://www.iclarified.com/23608/nitrous-tweak-brings-the-nitro-javascript-engine-to-third-party-iphone-apps), the tweak [Polyfills](https://poomsmart.github.io/repo/depictions/polyfills.html) improves the functionality of stock WebKit by adding polyfills for newer JavaScript features. Due to political pressure in the EU, Apple released [BrowserEngineKit](https://developer.apple.com/documentation/browserenginekit) in the 2024 updates iOS 17.4 and iPadOS 18.0. This has assisted Minh Ton's 2026 release of [Reynard Browser](https://github.com/minh-ton/reynard-browser) based on Mozilla's Gecko.
+
+Even if it has been out of necessity due to the lack of jailbreak releases for current iOS versions, CyberKit has helped pioneer the future of web browsers on iOS, and the release of other, less experimental, browsers has itself been a success of the project's goals — to demonstrate to the jailbreaking community it was possible and to document what it did along the way in hopes that others might follow in doing so. Thank you for your support of the project.
+
+> ⚠️ **Note:** CyberKit development is on hiatus and more is still planned for the project.
+>
+> This is not an official deprecation notice, as per issue [#52](https://github.com/CyberKitGroup/CyberKit/issues/52).
+
 ## Installation
 Please visit [the releases](https://github.com/UInt2048/CyberKit/releases).
 
