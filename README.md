@@ -8,6 +8,8 @@ This browser's first release in April 2023 was contemporaneous to Google's [Blin
 
 Following in the footsteps of the 2012 tweak [Nitrous](https://www.iclarified.com/23608/nitrous-tweak-brings-the-nitro-javascript-engine-to-third-party-iphone-apps), the tweak [Polyfills](https://poomsmart.github.io/repo/depictions/polyfills.html) improves the functionality of stock WebKit by adding polyfills for newer JavaScript features. Due to political pressure in the EU, Apple released [BrowserEngineKit](https://developer.apple.com/documentation/browserenginekit) in the 2024 updates iOS 17.4 and iPadOS 18.0. This has assisted Minh Ton's 2026 release of [Reynard Browser](https://github.com/minh-ton/reynard-browser) based on Mozilla's Gecko.
 
+In 2026, the project author of [WebKitPlayground](https://github.com/Lessica/WebKitPlayground) appears to have also experimented with WebKit reference implementations on iOS 16 to attempt systemwide replacement of WebKit on rootless versions.
+
 Even if it has been out of necessity due to the lack of jailbreak releases for current iOS versions, CyberKit has helped pioneer the future of web browsers on iOS, and the release of other, less experimental, browsers has itself been a success of the project's goals — to demonstrate to the jailbreaking community it was possible and to document what it did along the way in hopes that others might follow in doing so. Thank you for your support of the project.
 
 > ⚠️ **Note:** CyberKit development is on hiatus and more is still planned for the project.
