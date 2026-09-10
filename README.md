@@ -6,7 +6,7 @@ This browser's first release in April 2023 was contemporaneous to Google's [Blin
 
 ## Recent External Developments
 
-Following in the footsteps of the 2012 tweak [Nitrous](https://www.iclarified.com/23608/nitrous-tweak-brings-the-nitro-javascript-engine-to-third-party-iphone-apps), the tweak [Polyfills](https://poomsmart.github.io/repo/depictions/polyfills.html) improves the functionality of stock WebKit by adding polyfills for newer JavaScript features. Due to political pressure in the EU, Apple released [BrowserEngineKit](https://developer.apple.com/documentation/browserenginekit) in the 2024 updates iOS 17.4 and iPadOS 18.0. This has assisted Minh Ton's 2026 release of [Reynard Browser](https://github.com/minh-ton/reynard-browser) based on Mozilla's Gecko.
+Following in the footsteps of the 2012 tweak [Nitrous](https://www.iclarified.com/23608/nitrous-tweak-brings-the-nitro-javascript-engine-to-third-party-iphone-apps), the tweak [Polyfills](https://poomsmart.github.io/repo/depictions/polyfills.html) improves the functionality of stock WebKit by adding polyfills for newer JavaScript features. Due to political pressure in the EU, Apple released [BrowserEngineKit](https://developer.apple.com/documentation/browserenginekit) in the 2024 updates iOS 17.4 and iPadOS 18.0. This has assisted Minh Ton's 2026 release of [Reynard Browser](https://github.com/minh-ton/reynard-browser) based on Mozilla's Gecko and [Blinker Fluid](https://github.com/Nodesclock/Blinker-Fluid) based on Chrome's Blink.
 
 In 2026, the project author of [WebKitPlayground](https://github.com/Lessica/WebKitPlayground) appears to have also experimented with WebKit reference implementations on iOS 16 to attempt systemwide replacement of WebKit on rootless versions.
 
