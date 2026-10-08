@@ -1,5 +1,9 @@
 # CyberKit
 
+> [!IMPORTANT]
+> CyberKit development is currently on hiatus. More is still planned for the project in the future, especially quality assurance. However, it may be a while before this is performed, and you may wish to use another project which is likely more up to date in the meantime. This is not an official deprecation notice, as per issue [#52](https://github.com/CyberKitGroup/CyberKit/issues/52).
+
+
 CyberKit is a backport of WebKit to older iOS.
 
 This browser's first release in April 2023 was contemporaneous to Google's [Blink browser prototype](https://9to5google.com/2023/03/03/first-look-google-chrome-blink-engine-iphone-ios/). Although 9to5Google was able to run their browser in the iOS Simulator, upstream WebKit has allowed internal builds on the simulator have existed [since 2009](https://github.com/WebKit/WebKit/commit/8db218434d82310a70e950d3d8e843239603cd9a), and public support for builds on the simulator has existed [since 2014](https://github.com/WebKit/WebKit/commit/a51f89b11e3114cee49938fa15fdce22ecf43a8f). This project extended this work by being the first open source public project to provide an alternative browser engine for iOS on real hardware, successfully providing more usability under some conditions than the available stock iOS browsers, and provided a [technical overview](https://www.reddit.com/r/jailbreak/comments/1gdro8i/discussion_cyberkit_explained_a_technical_overview/) in 2024 to encourage more developers to work on developing browsers for iOS.
@@ -10,11 +14,10 @@ Following in the footsteps of the 2012 tweak [Nitrous](https://www.iclarified.co
 
 In 2026, the project author of [WebKitPlayground](https://github.com/Lessica/WebKitPlayground) appears to have also experimented with WebKit reference implementations on iOS 16 to attempt systemwide replacement of WebKit on rootless versions.
 
-Even if it has been out of necessity due to the lack of jailbreak releases for current iOS versions, CyberKit has helped pioneer the future of web browsers on iOS, and the release of other, less experimental, browsers has itself been a success of the project's goals — to demonstrate to the jailbreaking community it was possible and to document what it did along the way in hopes that others might follow in doing so. Thank you for your support of the project.
+> [!TIP]
+> A recent AI-assisted effort claims to have support for iOS 6 specifically. More investigation is planned on this topic, including whether the result can be extended. See [here](https://reddit.com/r/LegacyJailbreak/comments/1wqf2nr/release_web_port_2026_webkit_on_ios_6_system_wide/pcfhs3e/?context=3) for information.
 
-> ⚠️ **Note:** CyberKit development is on hiatus and more is still planned for the project.
->
-> This is not an official deprecation notice, as per issue [#52](https://github.com/CyberKitGroup/CyberKit/issues/52).
+Even if it has been out of necessity due to the lack of jailbreak releases for current iOS versions, CyberKit has helped pioneer the future of web browsers on iOS, and the release of other, less experimental, browsers has itself been a success of the project's goals — to demonstrate to the jailbreaking community it was possible and to document what it did along the way in hopes that others might follow in doing so. Thank you for your support of the project.
 
 ## Installation
 Please visit [the releases](https://github.com/UInt2048/CyberKit/releases).
